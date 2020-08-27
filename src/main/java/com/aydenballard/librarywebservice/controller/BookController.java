@@ -3,6 +3,7 @@ package com.aydenballard.librarywebservice.controller;
 import com.aydenballard.librarywebservice.Book;
 import com.aydenballard.librarywebservice.BookListFilter;
 import com.aydenballard.librarywebservice.BookRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -47,6 +48,7 @@ public class BookController {
      * @return Book - new book
      */
     @PostMapping("/allbooks")
+    @ResponseStatus(HttpStatus.CREATED)
     public Book newBook(@RequestBody Book newBook){
         return repository.save(newBook);
     }
@@ -101,7 +103,6 @@ public class BookController {
     @RequestMapping(method = RequestMethod.GET, value = "/books")
     public List<Book> getBooks(@RequestParam Map<String,String> customQuery){
         List books = repository.findAll();
-
         if(customQuery.containsKey("genre")){
             books = BookListFilter.filterGenre(books, customQuery.get("genre")); //filter genre
         }
@@ -118,7 +119,6 @@ public class BookController {
                 books = BookListFilter.filterRented(books, false);
             }
         }
-
         return books;
     }
 

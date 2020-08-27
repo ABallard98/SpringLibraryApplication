@@ -9,8 +9,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LoadDatabase {
 
+    //Logger of database
     private static final Logger LOGGER = LoggerFactory.getLogger(LoadDatabase.class);
 
+    /**
+     * Method to load books in to database on boot up
+     * @param repository - repository to store books
+     * @return initDatabase - database containing books
+     */
     @Bean
     CommandLineRunner initDatabase(BookRepository repository){
         return args -> {

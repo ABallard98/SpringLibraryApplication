@@ -11,14 +11,15 @@ public class Book {
     private @Id @GeneratedValue Long id;
     private String author; //author of book
     private String title; //title of book
-    //todo books can have multiple genres
     private String genre; //genre of book
     private boolean rented; //true if currently checked out
 
+    /**
+     * Empty constructor for book object
+     */
     public Book() {
 
     }
-
 
     /**
      * Constructor for book object
@@ -28,6 +29,14 @@ public class Book {
      * @param rented - rented out or not
      */
     public Book(String author, String title, String genre, boolean rented){
+        this.author = author;
+        this.title = title;
+        this.genre = genre;
+        this.rented = rented;
+    }
+
+    public Book(Long id, String author, String title, String genre, boolean rented){
+        this.id = id;
         this.author = author;
         this.title = title;
         this.genre = genre;
@@ -47,14 +56,21 @@ public class Book {
         this.rented = false;
     }
 
+    /**
+     * Method to get the id of the book
+     * @return Long - Id
+     */
     public Long getId(){
         return this.id;
     }
 
+    /**
+     * Method to set the id of a book
+     * @param id - id to be set
+     */
     public void setId(Long id){
         this.id = id;
     }
-
 
     /**
      * Method to return author of book
@@ -120,6 +136,11 @@ public class Book {
         this.rented = rented;
     }
 
+    /**
+     * Method to compare this object with another to see if equal or not
+     * @param o - object to be compared with
+     * @return boolean - true if equal else false
+     */
     @Override
     public boolean equals(Object o){
         if(this == o){
