@@ -1,7 +1,11 @@
+/**
+ * Class to perform unit testing on the BookListFilter class
+ * @Author Ayden Ballard
+ */
+
 package com.aydenballard.librarywebservice;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 

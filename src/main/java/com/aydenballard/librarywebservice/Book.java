@@ -1,3 +1,10 @@
+/**
+ * Class to represent a book object.
+ * Contains the author, title, genre of the book and a boolean 'rented' for if the
+ * book is currently checked out or not.
+ * @Author Ayden Ballard
+ */
+
 package com.aydenballard.librarywebservice;
 
 import javax.persistence.Entity;

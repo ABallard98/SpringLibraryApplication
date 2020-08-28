@@ -1,3 +1,8 @@
+/**
+ * Main class to start the REST web service
+ * @Author Ayden Ballard
+ */
+
 package com.aydenballard.librarywebservice;
 
 import org.springframework.boot.SpringApplication;

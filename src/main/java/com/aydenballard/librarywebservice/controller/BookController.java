@@ -2,6 +2,7 @@ package com.aydenballard.librarywebservice.controller;
 
 import com.aydenballard.librarywebservice.Book;
 import com.aydenballard.librarywebservice.BookListFilter;
+import com.aydenballard.librarywebservice.BookNotFoundException;
 import com.aydenballard.librarywebservice.BookRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -61,7 +62,7 @@ public class BookController {
      * @return Book - book matching ID
      */
     @GetMapping("/book/{id}")
-    public Book getBookByID(@PathVariable Long id){
+    public Book getBookByID(@PathVariable Long id) throws BookNotFoundException {
         return repository.findById(id).orElseThrow( () -> new BookNotFoundException(id));
     }
 

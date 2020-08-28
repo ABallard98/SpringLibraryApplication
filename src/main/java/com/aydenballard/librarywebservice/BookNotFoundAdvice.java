@@ -1,3 +1,8 @@
+/**
+ * Class to print the message of BookNotFoundException onto the HTML webpage
+ * @Author Ayden Ballard
+ */
+
 package com.aydenballard.librarywebservice;
 
 import org.springframework.http.HttpStatus;
@@ -9,6 +14,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class BookNotFoundAdvice {
 
+    /**
+     * Method to show exception error in the body of the webpage
+     * @param exception - exception to be displayed
+     * @return String - string containing error message
+     */
     @ResponseBody
     @ExceptionHandler(BookNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)

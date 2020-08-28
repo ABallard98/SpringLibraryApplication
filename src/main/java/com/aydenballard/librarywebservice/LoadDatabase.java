@@ -1,3 +1,8 @@
+/**
+ * Class to initialise the JPA repository of books with test data
+ * @Author Ayden Ballard
+ */
+
 package com.aydenballard.librarywebservice;
 
 import org.slf4j.Logger;
@@ -9,8 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LoadDatabase {
 
-    //Logger of database
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoadDatabase.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(LoadDatabase.class); //Logger of database
 
     /**
      * Method to load books in to database on boot up
@@ -22,14 +26,15 @@ public class LoadDatabase {
         return args -> {
             LOGGER.info("Preloading " + repository.save(new Book("Moller","Modelling Computing Systems",
                     "NONFICTION", false)));
-            LOGGER.info("Preloading " + repository.save(new Book ("Rowling", "Harry Potter and the goblet of fire",
-                    "FANTASY", false)));
+
+            LOGGER.info("Preloading " + repository.save(new Book ("Rowling",
+                    "Harry Potter and the goblet of fire", "FANTASY", false)));
 
             LOGGER.info("Preloading " + repository.save(new Book ( "Austen", "Pride and Prejudice",
                     "FICTION", false)));
 
-            LOGGER.info("Preloading " + repository.save(new Book ("Rowling", "Harry Potter and the chamber of secrets",
-                            "FANTASY", true)));
+            LOGGER.info("Preloading " + repository.save(new Book ("Rowling",
+                    "Harry Potter and the chamber of secrets", "FANTASY", true)));
 
             LOGGER.info("Preloading " + repository.save(new Book ("Adams", "Pandora's Box",
                     "NONFICTION", false)));

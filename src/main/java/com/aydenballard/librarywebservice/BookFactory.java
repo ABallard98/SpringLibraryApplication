@@ -1,3 +1,8 @@
+/**
+ * Factory class to create book objects
+ * @Author Ayden Ballard
+ */
+
 package com.aydenballard.librarywebservice;
 
 public class BookFactory {

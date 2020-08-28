@@ -1,3 +1,9 @@
+/**
+ * Class containing static methods to perform filtering operations on
+ * a list of book objects
+ * @Author Ayden Ballard
+ */
+
 package com.aydenballard.librarywebservice;
 
 import java.util.ArrayList;
